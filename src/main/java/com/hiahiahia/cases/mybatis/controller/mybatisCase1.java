@@ -18,6 +18,8 @@ public class mybatisCase1 {
     private UserDao uDao;
     @RequestMapping("/case1")
     public List<User> getUser(@RequestParam(value="name") String name) {
+        String sstr = "1234";
+        URL url = new URL(sstr);
         return uDao.selectUser(name);
 
     }
