@@ -18,12 +18,13 @@ public class SqliCase5 {
         /*
          *  防护方法：通过正则判断用户输入是否合法
          */
+        /*
         if (StringUtils.isEmpty(id)) {
             throw new Exception("id is empty");
         } else if (!Pattern.matches("[a-zA-Z0-9]{3,20}", id)) {
             throw new Exception("id is invalid!");
-        }
-        String sql = String.format("select * from user where id='%s'", id);
+        }*/
+        String sql = String.format("select * from user where id='%s' and name = '%s'", id, id);
         Connection con;
         try {
             con = DriverManager.getConnection("", "sunny","");
@@ -42,7 +43,7 @@ public class SqliCase5 {
         try {
             con = DriverManager.getConnection("", "sunny","");
             Statement stmt = con.createStatement();
-            stmt.executeQuery(sql);   // unsafe
+            stmt.executeQuery(sql + "1234");   // unsafe
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
