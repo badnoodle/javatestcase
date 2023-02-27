@@ -15,7 +15,7 @@ public class PathCase3 {
          */
         int pos = path.lastIndexOf(".");
         String ext = path.substring(pos);
-        String fileName = "uuid" + ext;
+        String fileName = "uuid" + ext + "...";
         new File(fileName).delete();		// safe
     }
 
