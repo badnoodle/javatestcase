@@ -20,7 +20,7 @@ public class mybatisCase1 {
     public List<User> getUser(@RequestParam(value="name") String name) {
         String sstr = "http://4.xx";
         //URL url = new URL(sstr);
-        return uDao.selectUser(name);
+        return uDao.selectUser(name + "sdf");
 
     }
 }
